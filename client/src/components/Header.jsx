@@ -3,22 +3,13 @@ import logo from '@/assets/logo.png';
 import { useEffect, useState, useCallback } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { precedingZero } from '@/utils/utils';
-// import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { FcGoogle } from 'react-icons/fc';
-// import { useLocation } from 'react-router-dom';
-
-// import { useGoogleLogin } from '@react-oauth/google';
-
-// import { gapi } from 'gapi-script';
+import getClientId from '@/services/getClientId';
 
 const Header = () => {
   const [currentTime, setCurrentTime] = useState('');
   // const url = useLocation();
 
-  // const clientId =
-  //   '356745219459-1vcfk15vc38ck2bnfrpc8f1pj73gs9i0.apps.googleusercontent.com';
-
-  // const clientSectet = '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';
   const showDateTime = useCallback((firstrun = true) => {
     const date = new Date();
     const year = date.getFullYear();
@@ -46,10 +37,11 @@ const Header = () => {
     // }
   }, [showDateTime]);
 
-  const login = () => {
+  const login = async () => {
+    const data = await getClientId();
+
     const params = {
-      client_id:
-        '356745219459-1vcfk15vc38ck2bnfrpc8f1pj73gs9i0.apps.googleusercontent.com',
+      client_id: data.clientId,
       redirect_uri: 'http://localhost:5173',
       response_type: 'token',
       scope: 'https://www.googleapis.com/auth/drive.metadata.readonly',
@@ -99,10 +91,11 @@ const Header = () => {
           <span>Weather Forecast</span>
         </div>
       </div>
-      <h1>{currentTime}</h1>
+      <div>{currentTime}</div>
 
-      <div className="flex">
+      <div className="flex gap-3">
         {loggedin === false ? (
+          // <div className="g-signin2" data-onsuccess={onSignIn}></div>
           <button
             className="flex items-center gap-2 text-grey-700"
             onClick={() => login()}
@@ -121,9 +114,9 @@ const Header = () => {
         )}
 
         <div className="github">
-          <button>
-            <FaGithub />
-          </button>
+          <a href="https://github.com/larrywong98/weather-forecast">
+            <FaGithub size={20} />
+          </a>
         </div>
       </div>
     </div>

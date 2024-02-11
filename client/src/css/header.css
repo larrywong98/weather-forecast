@@ -1,11 +1,14 @@
 .header {
   width: 100%;
+  min-width: 1380px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid red; */
-  padding: 10px 30px;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   /* gap: 30%; */
 
   h1 {
@@ -16,9 +19,9 @@
 }
 .logo-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
-  width: 100px;
+  width: 150px;
   img {
     width: 50px;
   }
@@ -46,8 +49,9 @@
 }
 
 .github {
-  button {
-    height: 100%;
-    background-color: transparent;
+  display: flex;
+  align-items: center;
+  a {
+    color: white;
   }
 }

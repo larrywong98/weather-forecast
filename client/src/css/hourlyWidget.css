@@ -1,0 +1,9 @@
+.hourly-widget {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 5px 0;
+}
