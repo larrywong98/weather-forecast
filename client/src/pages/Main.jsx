@@ -129,7 +129,7 @@ const Main = () => {
                   {weatherData.name +
                     (weatherData.state ? ', ' + weatherData.state : '')}
                 </div>
-                <div className="flex flex-col items-center w-24">
+                <div className="flex flex-col items-center w-28">
                   <div>
                     {mapValueToField('temp', weatherData.current['temp'])}
                   </div>
