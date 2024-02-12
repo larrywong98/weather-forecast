@@ -31,10 +31,6 @@ const Header = () => {
   }, []);
   useEffect(() => {
     showDateTime();
-    // console.log(url);
-    // if (url.hash !== '') {
-    //   setLoggedin(true);
-    // }
   }, [showDateTime]);
 
   const login = async () => {

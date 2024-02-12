@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-// import Hello from '@/components/Hello';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Main from '@/pages/Main';
 import { GoogleOAuthProvider } from '@react-oauth/google';
