@@ -4,12 +4,18 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Main from '@/pages/Main';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Auth from './pages/Auth';
+import Auth from '@/pages/Auth';
+import { useState, useEffect } from 'react';
+import getClientId from '@/services/getClientId';
 const queryClient = new QueryClient();
-const clientId =
-  '356745219459-1vcfk15vc38ck2bnfrpc8f1pj73gs9i0.apps.googleusercontent.com';
 const App = () => {
   // const [count, setCount] = useState(0);
+  const [clientId, setClientId] = useState('');
+  useEffect(() => {
+    (async () => {
+      setClientId(await getClientId().clientId);
+    })();
+  }, []);
 
   return (
     <GoogleOAuthProvider clientId={clientId}>
