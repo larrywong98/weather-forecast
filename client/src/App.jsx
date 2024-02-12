@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-// import Hello from '@/components/Hello';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Main from '@/pages/Main';
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -9,7 +7,6 @@ import { useState, useEffect } from 'react';
 import getClientId from '@/services/getClientId';
 const queryClient = new QueryClient();
 const App = () => {
-  // const [count, setCount] = useState(0);
   const [clientId, setClientId] = useState('');
   useEffect(() => {
     (async () => {
