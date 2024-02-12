@@ -133,7 +133,9 @@ const Main = () => {
                   <div>
                     {mapValueToField('temp', weatherData.current['temp'])}
                   </div>
-                  <div>{weatherData.current.weather[0].description}</div>
+                  <div className="text-center">
+                    {weatherData.current.weather[0].description}
+                  </div>
                 </div>
                 <div className="w-24">
                   <img
