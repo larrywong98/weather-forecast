@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import getClientId from '@/services/getClientId';
 const queryClient = new QueryClient();
 const App = () => {
-  // const [count, setCount] = useState(0);
   const [clientId, setClientId] = useState('');
   useEffect(() => {
     (async () => {
